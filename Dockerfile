@@ -1,4 +1,4 @@
-# BUILDING 
+# BUILDING
 FROM node:lts-alpine AS builder
 
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY . ./
 COPY docker/config.prod.ts ./src/config/config.prod.ts
 
 # 在国内打开下面一行加速
-#RUN npm config set registry https://registry.npm.taobao.org/ && npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+RUN npm config set registry https://registry.npm.taobao.org/ && npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 
 RUN npm install && \
     npm install typescript -g && \

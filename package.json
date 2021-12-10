@@ -7,13 +7,14 @@
     "build-css": "node ./node_modules/sass/sass src/:src/ --quiet",
     "watch-css": "npm run build-css && node ./node_modules/sass/sass src/:src/ --watch",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js --max-old-space-size=4096",
+    "dev": "npm-run-all -p watch-css start-js --max-old-space-size=4096",
     "build": "npm run lint && npm run build-css && react-scripts build",
     "test-backup": "npm run lint && react-scripts test --env=jsdom",
     "test": "npm run lint",
     "eject": "react-scripts eject",
     "lint": "tslint --project ./ -c tslint.json --fix",
-    "build-docker": "docker build --rm -f \"Dockerfile\" -t rapteam/rap2-dolores:latest ."
+    "build-docker": "docker build --rm -f \"Dockerfile\" -t rapteam/rap2-dolores:latest .",
+    "serve": "serve -s ./build"
   },
   "repository": {
     "type": "git",
